@@ -46,7 +46,7 @@ groceryList.list();
 var breadTask = groceryList.tasks[1]
 breadTask.id
 breadTask.description
-breadTask.completed
+breadTask.complete();
 groceryList.list();
 groceryList.remove(breadTask);
 groceryList.list();
