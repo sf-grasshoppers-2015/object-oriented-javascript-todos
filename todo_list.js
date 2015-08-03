@@ -3,6 +3,11 @@ var newTask = function(task_description) {
   this.completed = false;
   }
 
+newTask.prototype.complete = function(){
+  console.log("This is " + this)
+  this.completed = true
+}
+
 var TodoList = function() {
   this.tasks = [];
 }
@@ -18,12 +23,15 @@ TodoList.prototype.list = function(){
   }
 }
 
-TodoList.prototype.complete = function(){
-  console.log(this.tasks.completed)
-  console.log(this)
-  debugger
-  this.completed = true
+TodoList.prototype.remove = function(task){
+  for (i=0; i < this.tasks.length; i++) {
+    // console.log(this.tasks[i])
+    if (task === this.tasks[i]){
+      delete this.tasks[i];
+    }
+  }
 }
+
 
 // Driver code
 
